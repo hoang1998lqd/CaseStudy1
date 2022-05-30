@@ -1,0 +1,46 @@
+/* Css cho body*/
+body{
+    background: url("/Immage/login.png");
+    background-size: cover;
+}
+/*Css cho khung đăng nhập để ở giữa màn hình*/
+/*Đơn vị vh và vw là tính theo tỷ lệ phần trăm của khung màn hình*/
+.form-login-container{
+     min-height:100vh;
+     display:flex;
+     justify-content:center;
+     align-items:center;
+ }
+.form-login{
+    max-width:300px;
+    background:Orgba(0,0,0,0.8);
+    flex-grow:1;
+    padding:30px 30px 40px;
+    box-shadow:0px 0px 17px 2px rgba(255,255,255,0.8);
+    /*Chỉnh cho viền khung được sáng lên*/
+}
+.form-header-login{
+font-size:40px;
+color: #2f4bd7;
+text-align:center;
+margin-bottom:20px;
+}
+.form-login-submit{
+    width: 100%;
+    text-transform: uppercase;
+    background: #8b1900;
+    color: violet;
+    height: 20px;
+}
+.form-login-submit:hover{
+    border: 2px solid aqua;
+}
+#form-login-pass{
+    width: 97.5%;
+    height: 20px;
+    /*margin-bottom: 5px;*/
+}
+#form-login-group{
+    width: 97.5%;
+    height: 20px;
+}
