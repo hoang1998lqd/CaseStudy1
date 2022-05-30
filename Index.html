@@ -22,6 +22,7 @@
 <!--        Tạo giao diện header cho Website-->
         <div class="content-nav">
             <ul id="main_menu">
+                <img class="img-header" src="Immage/V.png" alt="Error">
                 <li><a class="content-nav-menu" href="http://localhost:63342/Shop/Index.html?_ijt=ii3m3088cq1pdaeghmnhn1mp0e&_ij_reload=RELOAD_ON_SAVE"><b>Trang Chủ</b></a></li>
                 <li><a class="conten-nav-menu"><b>Laptop Mới</b></a>
                     <ul class="sub_menu">
@@ -80,25 +81,25 @@
 <!-- content -->
 <div class="container_swap">
 
-<!--    <div class="div_left">-->
-<!--        <div class="slide">-->
-<!--            <div class="show-icon">-->
-<!--                <i class="fa-solid fa-circle-chevron-left" onclick="Back()"></i>-->
-<!--                <i class="fa-solid fa-circle-chevron-right" onclick="Next()"></i>-->
-<!--            </div>-->
-<!--            <div class="chuyen-slide">-->
-<!--                <img class="showImg" src="/Immage/Laptop/Slide/asuss.png" alt="">-->
-<!--                <img class="showImg" src="/Immage/Laptop/Slide/asuss1.png" alt="">-->
-<!--                <img class="showImg" src="/Immage/Laptop/Slide/asus2.png" alt="">-->
-<!--                <img class="showImg" src="/Immage/Laptop/Slide/dell1.png" alt="">-->
-<!--                <img clas1s="showImg" src="/Immage/Laptop/Slide/dell2.png" alt="">-->
-<!--                <img class="showImg" src="/Immage/Laptop/Slide/dell3.png" alt="">-->
-<!--                <img class="showImg" src="/Immage/Laptop/Slide/hp.png" alt="">-->
-<!--                <img class="showImg" src="/Immage/Laptop/Slide/hpvitus.png" alt="">-->
-<!--            </div>-->
+    <div class="div_left">
+        <div class="slide">
+            <div class="show-icon">
+                <i class="fa-solid fa-circle-chevron-left" onclick="Back()"></i>
+                <i class="fa-solid fa-circle-chevron-right" onclick="Next()"></i>
+            </div>
+            <div class="chuyen-slide">
+                <img class="showImg" src="/Immage/Laptop/Slide/asuss.png" alt="">
+                <img class="showImg" src="/Immage/Laptop/Slide/asuss1.png" alt="">
+                <img class="showImg" src="/Immage/Laptop/Slide/asus2.png" alt="">
+                <img class="showImg" src="/Immage/Laptop/Slide/dell1.png" alt="">
+                <img clas1s="showImg" src="/Immage/Laptop/Slide/dell2.png" alt="">
+                <img class="showImg" src="/Immage/Laptop/Slide/dell3.png" alt="">
+                <img class="showImg" src="/Immage/Laptop/Slide/hp.png" alt="">
+                <img class="showImg" src="/Immage/Laptop/Slide/hpvitus.png" alt="">
+            </div>
 
-<!--        </div>-->
-<!--    </div>-->
+        </div>
+    </div>
 
     <div class="div_right">
         <img id="image-add" src="/Immage/Laptop/Slide/huongdan.png" alt="Error">
@@ -124,9 +125,10 @@
                         <h3 class="content-product-h3">Laptop Dell XPS 13</h3>
                         <div class="content-product-deltals">
                             <div class="price">
-                                <span class="money">25000000đ</span>
+                                <span class="money" style="margin-left: -100px">25000000đ</span>
                             </div>
                             <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            <button type="button" class="btn btn-cart-edit" onclick="editSP()" style="margin-left: 10px">Edit</button>
                         </div>
                     </div>
                 </li>
@@ -140,9 +142,10 @@
                         <h3 class="content-product-h3">Laptop Asus ROG</h3>
                         <div class="content-product-deltals">
                             <div class="price">
-                                <span class="money">26000000</span>
+                                <span class="money" style="margin-left: -100px">26000000đ</span>
                             </div>
                             <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            <button type="button" class="btn btn-cart-edit" style="margin-left: 10px">Edit</button>
                         </div>
                     </div>
                 </li>
@@ -156,9 +159,10 @@
                         <h3 class="content-product-h3">Laptop Dell Gamming Alienware</h3>
                         <div class="content-product-deltals">
                             <div class="price">
-                                <span class="money">35800000</span>
+                                <span class="money" style="margin-left: -100px">35800000đ</span>
                             </div>
                             <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            <button type="button" class="btn btn-cart-edit" style="margin-left: 10px">Edit</button>
                         </div>
                     </div>
                 </li>
@@ -169,12 +173,13 @@
                              alt="">
                     </div>
                     <div class="content-product">
-                        <h3 class="content-product-h3">Laptop Lenovo Legion 5 Pro</h3>
+                        <h3 class="content-product-h3" >Laptop Lenovo Legion 5 Pro</h3>
                         <div class="content-product-deltals">
                             <div class="price">
-                                <span class="money">38600000</span>
+                                <span class="money" style="margin-left: -100px">38600000đ</span>
                             </div>
                             <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            <button type="button" class="btn btn-cart-edit" style="margin-left: 10px">Edit</button>
                         </div>
                     </div>
                 </li>
@@ -189,9 +194,10 @@
                         </h3>
                         <div class="content-product-deltals">
                             <div class="price">
-                                <span class="money">25199000đ</span>
+                                <span class="money" style="margin-left: -100px">25199000đ</span>
                             </div>
                             <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            <button type="button" class="btn btn-cart-edit" style="margin-left: 10px">Edit</button>
                         </div>
                     </div>
                 </li>
@@ -205,9 +211,10 @@
                         <h3 class="content-product-h3">Laptop HP Gamming Omen</h3>
                         <div class="content-product-deltals">
                             <div class="price">
-                                <span class="money">26800000</span>
+                                <span class="money" style="margin-left: -100px">26800000đ</span>
                             </div>
                             <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            <button type="button" class="btn btn-cart-edit" style="margin-left: 10px">Edit</button>
                         </div>
                     </div>
                 </li>
@@ -221,9 +228,10 @@
                         <h3 class="content-product-h3">Laptop Macbook Pro 2022 16inch</h3>
                         <div class="content-product-deltals">
                             <div class="price">
-                                <span class="money">38670000</span>
+                                <span class="money" style="margin-left: -100px">38670000đ</span>
                             </div>
                             <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            <button type="button" class="btn btn-cart-edit" style="margin-left: 10px">Edit</button>
                         </div>
                     </div>
                 </li>
@@ -237,9 +245,10 @@
                         <h3 class="content-product-h3">Laptop MSI Gamming Raizer</h3>
                         <div class="content-product-deltals">
                             <div class="price">
-                                <span class="money">26800000</span>
+                                <span class="money" style="margin-left: -100px">26800000đ</span>
                             </div>
                             <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            <button type="button" class="btn btn-cart -edit" style="margin-left: 10px">Edit</button>
                         </div>
                     </div>
                 </li>

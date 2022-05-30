@@ -1,4 +1,47 @@
+let KichThuoc = document.getElementsByClassName('slide')[0].clientWidth;
+let chuyenSlide = document.getElementsByClassName('chuyen-slide')[0];
 
+let img = chuyenSlide.getElementsByTagName('img');
+let max = KichThuoc*img.length;
+max -= KichThuoc;
+let chuyen = 0;
+function Next() {
+    if  (chuyen<max){
+        chuyen +=KichThuoc;
+
+    }
+    else (chuyen=0)
+    chuyenSlide.style.marginLeft = '-' + chuyen + 'px';
+
+}
+function Back() {
+    if  (chuyen==0){
+        chuyen = max;
+
+    }
+    else (chuyen -=KichThuoc)
+    chuyenSlide.style.marginLeft = '-' + chuyen + 'px';
+
+}
+setInterval(function (){
+    Next();
+},3000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Class
 class Product {
     constructor(name, price, img, laptop) {
         this.name=name;
@@ -167,7 +210,7 @@ arrayMSI = [ms1,ms2,ms3,ms4,ms5,ms6]
                 '                            <div class="price">\n' +
                 '                                <span class="money"> '+ array[i].price + 'VNĐ  </span>\n' +
                 '                            </div>\n' +
-                '                            <button type="button" class="btn btn-cart" onclick="updatecart()">Thêm Vào Giỏ</button>\n' +
+                '                            <button type="button" class="btn btn-cart" >Thêm Vào Giỏ</button>\n' +
                 '                            <button type="button" class="btn btn-cart" onclick="editProduct()">Edit</button>\n' +
                 '                            <button type="button" class="btn btn-cart" onclick="renderEdit(\'Cập nhật\');editProduct(' + i   + ',\'' + array[i].getLaptop() + ' '+')">Edit</button>\n' +
 
@@ -218,8 +261,8 @@ function renderEdit(text) {
         "<td><input type='text' name='price' size='25' maxlength='30' id='price'></td></tr>" +
         "<tr><td><label for='image'>Ảnh sản phẩm</td>" +
         "<td><input type='text' name='image' size='25' maxlength='30' id='image'></label></td></tr>" +
-        "<tr><td><label for='category'>Loại máy</label></td>" +
-        "<td><select id='category'>" +
+        "<tr><td><label for='latop'>Loại máy</label></td>" +
+        "<td><select id='laptop'>" +
         "<option></option>" +
         "<option value='Acer'>Acer</option>" +
         "<option value='Asus'>Asus</option>" +
@@ -245,7 +288,7 @@ function editForm() {
     let name = document.getElementById("name").value
     let price = document.getElementById("price").value
     let image = document.getElementById("image").value
-    let laptop = document.getElementById("category").value
+    let laptop = document.getElementById("laptop").value
     let i = localStorage.getItem("indexI")
     // let j = localStorage.getItem("indexJ")
     switch (laptop) {
@@ -262,7 +305,7 @@ function editForm() {
             arrayDell[i] = new Product(name, price, image, laptop)
             break
         }
-        case "Motorbike": {laptop
+        case "Motorbike": {
             arrayLenovo[i] = new Product(name, price, image, laptop)
             break
         }
@@ -339,7 +382,47 @@ for (let i = 0; i < remove_cart.length; i++) {
 }
 updatecart()
 
+
+
+// Edit sản phẩm
+// let cartRowEdit = `
+//   <div class="cart-item cart-column">
+//       <img class="cart-item-image" src="${img}" width="100" height="100">
+//       <span class="cart-item-name">${name}</span>
+//   </div>
+//   <span class="cart-price cart-column">${price}</span>
+//   <div class="cart-quantity cart-column">
+//       <input class="cart-quantity-input" type="number" value="1">
+//       <button class="btn btn-edit" type="button">Xóa</button>
+//   </div>`
+//
+//
+//
+//
+//
+//
+// function editSP() {
+//     let edit-product =
+// }
+
+
+
+
+
+
+
 // update cart
+// Trong file main.js các bạn cũng gọi HTML DOM như ở trên. Mình sẽ giải thích cơ chế hoạt động của updatecart() này cho các bạn dễ hiểu nha.
+// Thì nó sẽ gọi .cart_items trong .cart_items có nhiều .cart_row trong mỗi cart_row chứa các thông tin của sản phẩm
+// như hình ảnh, tiêu đề, giá tiền của sản phẩm. Bởi vì .cart-row này trong .cart-items nên không thể gọi document được
+// mà phải gọi dựa trên DOM của .cart_items.
+// Sau khi gọi được cart_rows chúng ta sẽ chạy vòng lặp để biết có bao nhiêu
+// .cart_row. Tiếp đến chúng ta sẽ gọi HTML DOM của .cart-price và .cart-quantity-input, bởi vì chỉ có một giá tiền và số lượng sản phẩm nên chúng ta sử dụng [0]
+// Tiếp đến chúng ta sẽ lấy giá trị của giá tiền và số lượng của sản phẩm.
+// Cuối cùng là tính tổng tiền, ở đây mình sẽ nói rõ ra tí. Total sẽ gán bằng 0 đúng không nào. Sau khi chúng ta tính
+// tổng tiền của sản phẩm đầu tiên sẽ được gán vào total. Thì bây giờ total được gán bằng tổng số tiền của sản phẩm đầu tiên, n
+// ếu bạn có sản phẩm thứ hai trong giỏ hàng thì total = total của sản phẩm đầu tiên + tổng tiền của sản phẩm thứ hai
+// và gán vào total tổng, cứ thế nhiều sản phẩm hơn cũng làm như vậy đó.
 function updatecart() {
     let cart_item = document.getElementsByClassName("cart-items")[0];
     let cart_rows = cart_item.getElementsByClassName("cart-row");
@@ -369,12 +452,28 @@ for (let i = 0; i < quantity_input.length; i++) {
     })
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 // Thêm vào giỏ
+// Khau báo mảng dữ liệu của sản phẩm.
+// addEventListener: Tạo ra hành động kh gọi hàm
+
+
 let add_cart = document.getElementsByClassName("btn-cart");
 for (let i = 0; i < add_cart.length; i++) {
     let add = add_cart[i];
     add.addEventListener("click", function (event) {
-        let button = event.target;
+        let button = event.target; // Phần tử được thêm Event Listener
         let product = button.parentElement.parentElement;
         let img = product.parentElement.getElementsByClassName("img-prd")[0].src
         let name = product.getElementsByClassName("content-product-h3")[0].innerText
@@ -386,20 +485,20 @@ for (let i = 0; i < add_cart.length; i++) {
         updatecart()
     })
 }
-
+// Lấy thông tin sản phẩm để thêm vào Cart
 function addItemToCart(name, price, img) {
     let cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
     let cartItems = document.getElementsByClassName('cart-items')[0]
     let cart_name = cartItems.getElementsByClassName('cart-item-name')
-    // Nếu name của sản phẩm bằng với name mà bạn thêm vao giỏ hàng thì sẽ thông cho user.
+    // Nếu name của sản phẩm bằng với name mà bạn thêm vào giỏ hàng thì sẽ thông cho user.
     for (let i = 0; i < cart_name.length; i++) {
         if (cart_name[i].innerText === name) {
             alert('Sản Phẩm Đã Có Trong Giỏ Hàng')
             return
         }
     }
-
+// Tạo bảng trong cart
     let cartRowContents = `
   <div class="cart-item cart-column">
       <img class="cart-item-image" src="${img}" width="100" height="100">
@@ -410,12 +509,18 @@ function addItemToCart(name, price, img) {
       <input class="cart-quantity-input" type="number" value="1">
       <button class="btn btn-danger" type="button">Xóa</button>
   </div>`
+
+
+    //Thao tác trên Cart
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', function () {
-        let button_remove = event.target
-        button_remove.parentElement.parentElement.remove()
-        updatecart()
+        if (confirm('Bạn có chắc là không mua sản phẩm này nữa không ?')){
+            let button_remove = event.target
+            button_remove.parentElement.parentElement.remove()
+            updatecart()
+        }
+
     })
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', function (event) {
         let input = event.target
@@ -425,3 +530,6 @@ function addItemToCart(name, price, img) {
         updatecart()
     })
 }
+
+
+

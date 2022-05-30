@@ -1,3 +1,6 @@
+body{
+    background-color: rgba(255, 205, 240, 0.35);
+}
 * {
     padding: 0;
     margin: 0;
@@ -62,6 +65,22 @@ nav .content-nav ul li a:hover {
 /* Slide
 padding để 50% là để khi co nhỏ hay phóng to thì ảnh nó tránh hiện tượng méo ảnh
 */
+.container_swap{
+    width: 1500px;
+}
+.div_left{
+    width: 200px;
+    float: left;
+    text-align: center;
+}
+.div_right{
+    width: 200px;
+    float: left;
+    text-align: center;
+}
+
+
+
 
 
 .slide{
@@ -69,7 +88,7 @@ padding để 50% là để khi co nhỏ hay phóng to thì ảnh nó tránh hi�
     /*margin: 0 auto;*/
     overflow: hidden;
     /*padding: 0px 0px 0 0  ;*/
-    margin-left: 100px;
+    margin-left: 200px;
     border-radius: 10px;
 }
 .showImg{
@@ -106,17 +125,6 @@ padding để 50% là để khi co nhỏ hay phóng to thì ảnh nó tránh hi�
     height: 600px;
     padding: 10px 100px;
     color: black;
-}
-.image-add{
- margin-left: 100px;
-    margin-top: 30px;
-    width: 1000px;
-    height: 590px;
-}
-.image-add2{
-    margin-left: 100px;
-    width: 40%;
-    height: 590px;
 }
 
 
@@ -281,6 +289,15 @@ h5.modal-title {
     text-decoration: none;
     cursor: pointer;
 }
+
+.img-header{
+    width: 100px;
+    height: 60px;
+    margin-top: 8px;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
 
 #cart {
     font-size: 15px;
@@ -447,9 +464,9 @@ h5.modal-title {
 }
 #image-add, .image-add2{
     margin-top: 20px;
-    margin-left: 100px;
-    height: 500px;
-    width: 1000px;
+    margin-left: 1100px;
+    height: 220px;
+    width: 700px;
 }
 .cart-header {
     font-weight: bold;
